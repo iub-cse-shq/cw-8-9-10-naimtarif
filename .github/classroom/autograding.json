@@ -1,0 +1,14 @@
+{
+  "tests": [
+    {
+      "name": "test server",
+      "setup": "npm install && cd classwork && npm install",
+      "run": "npm test",
+      "input": "",
+      "output": "",
+      "comparison": "included",
+      "timeout": 4,
+      "points": 30
+    }
+  ]
+}

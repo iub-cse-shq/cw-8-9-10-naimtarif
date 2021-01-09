@@ -1,0 +1,24 @@
+{
+    "private": true,
+    "version": "0.0.1",
+    "name": "cw8-9-10",
+    "author": "Shama Hoque",
+    "devDependencies": {
+        "@babel/core": "*",
+        "@babel/preset-env": "*",
+        "babel-jest": "*",
+        "jest": "*",
+        "jquery": "*",
+        "supertest": "^6.0.1"
+    },
+    "scripts": {
+        "test": "jest --detectOpenHandles"
+    },
+    "jest": {
+        "verbose": false,
+        "testEnvironment": "node"
+    },
+    "dependencies": {
+        "mongoose": "^5.11.8"
+    }
+}
