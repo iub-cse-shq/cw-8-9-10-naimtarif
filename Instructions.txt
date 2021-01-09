@@ -1,0 +1,67 @@
+Install node.js
+---------------------------------------------------------
+To Generate package.json in our folder:
+
+To initialize a package.json open vscode terminal within the folder containing html and js files
+Type   npm init   in the terminal
+For package name the default name is given within () so click enter  version number will show. Again click enter for description shows up.
+For description we can write anything as we want.
+Click enter them entry point will show up.
+Clicking enter will make Test Command then git repository then keywords then author then license to show up one after another, we dont need to modify any of them.
+Then the package.json that will be generated will be shown 
+Click enter we will notice there will be an package.json file in the folder with html and js files.
+---------------------------------------------------------------
+
+To install express:
+
+To install express open vscode terminal within the folder containing html and js files and write    npm i express
+This will download the express module.
+We will notice a file called package-lock.json and a folder called node modules is created in the folder.
+----------------------------------------------------------------------
+
+package-lock.json keeps track of dependencies of the express module itself because that implementation also contains other modules.
+node modules folder contains all the code that is required to enable express to run. Here all the module codes and library we download and use resides. We will not push this node modules folder in the github respository.
+Notice that package.json file is updated with a dependencies list where its mentioning express and its version number.
+Everytime we add a module this package.json file will be updated automatically, the list of what is being added.
+
+
+-----------------------------------------------------------------------
+
+To start the server to execute the file server.js using node from command line in the same folder :
+Type node server.js  in the terminal
+Note that actual syntax is: node name of js file with its extension js where our code is written.
+
+------------------------------------------------------------------------
+Go to browser type localhost:3000 at the url box, we will send a request at this route. 
+We will observe that browser tab is is continuously loading as we are not doing anything with the response because there is no response being send back though the code is executing.
+At terminal we see that the request objects have been printed, we see it has lots of things. Know that with this we can access pretty much everything that comes into the request when we had a go do it to a browser or somehow call it. This server code console.log('Server running'); is executed and we see the request object.
+
+------------------------------------------------------------------------------------------------------------------
+
+To stop a server using node.js on vscode:
+click ctrl+c in the terminal
+
+-----------------------------------------------------------------------------------------------------------------
+
+To send back a resonse we use a response object. This code response.status(200); It won't show anything on the browser body. Though it send back status 200, it didn't send back anything for the browser to show. We want to send back the index.html file to the browser when it sends an request to the root url. That's what we will do for the response.
+In server when we try to access files in our filesystem that is our code folder, we need to give the complete absolute address. In node.js we have __dirname that gives start of our address url. Then specify the spicfic file that we want to return. __dirname contains the first part of our file address including the root of our folder and then we append the address of the specific file.
+Root is localhost:3000 as in browser url.
+At first part, we are adding a route, starting with the root route, which accepts the gets request and in response sends back index.html file.
+
+At the second part, for the second.html file, we will have a different route name from the root making it '/second'. So that when we go localhost 3000 in browser, we should see in url that it is written:
+localhost:3000/second 
+
+Note that server recognizes route names within <a href="/routename">Link</a> . If you put any .html file it will cause an error <a href="/something.html">Link</a>
+All the defined route names of  ('/route name')  within  app.get('/route name',function(request,response)  in server.js will work. 
+If we make any changes to html file we will not require to star the server but if we make any changes to server.js file we will need to restart the server.
+ 
+
+
+
+
+
+
+
+
+
+

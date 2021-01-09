@@ -1,24 +1,21 @@
 {
-    "private": true,
-    "version": "0.0.1",
-    "name": "cw8-9-10",
-    "author": "Shama Hoque",
-    "devDependencies": {
-        "@babel/core": "*",
-        "@babel/preset-env": "*",
-        "babel-jest": "*",
-        "jest": "*",
-        "jquery": "*",
-        "supertest": "^6.0.1"
-    },
-    "scripts": {
-        "test": "jest --detectOpenHandles"
-    },
-    "jest": {
-        "verbose": false,
-        "testEnvironment": "node"
-    },
-    "dependencies": {
-        "mongoose": "^5.11.8"
-    }
+  "name": "cw8",
+  "version": "1.0.0",
+  "description": "classwork 8",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "ejs": "^3.1.5",
+    "express": "^4.17.1",
+    "mongoose": "^5.11.9"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.6"
+  }
 }

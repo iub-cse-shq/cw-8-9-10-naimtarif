@@ -1,0 +1,72 @@
+All article.ejs
+<html>
+    <head>
+        <title>Basic Node App</title>
+        </head>
+        <body>
+            <h1>All Articles View</h1>
+            <% console.log(articles) %>
+            <ul>
+                <% articles.forEach(article=>{ %>
+                    <li><%= article.title %></li>
+                    <% }) %>
+                </ul>
+        </body>
+</html>
+
+--------------------------------------------------------------
+article.js
+
+<html>
+
+<head>
+    <title>Basic Node App</title>
+</head>
+
+<body>
+    <h1>Single Articles View</h1>
+    <h2>
+        <%= article.title %>
+    </h2>
+    <p>
+        <%= article.content %>
+    </p>
+</body>
+
+</html>
+
+-----------------------------------------------------------------
+app.post('/article/new', function (request, response) {
+   //console.log('post request made');
+   //console.log(request.body);
+   //articles.push(request.body);
+   //console.log(articles);
+   //response.json(articles);
+   let newArticle = request.body;
+   if (newArticle.title) {
+      articles.push(newArticle);
+      console.log(articles);
+      response.json(articles)
+   }
+   else {
+      response.status(400).json({
+         msg: 'No title found'
+      })
+   }
+});
+
+------------------------------------------------------------------
+
+app.get('/article/:id', function (request, response) {
+   console.log(request.params.id);
+    response.render('article.ejs', {
+      article: articles[request.params.id]
+   })
+})
+
+--------------------------------------------------------------------
+app.get('/articles/all', function (request, response) {
+   response.render('allArticles.ejs', {
+      articles: articles
+   })
+})
